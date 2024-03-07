@@ -1,4 +1,4 @@
-In readme i will provide informations on how to install and run the project.
+In README i will provide informations on how to install and run the project.
 
 I will use a makefile to create a local db and restore the .bak file of my database
 
