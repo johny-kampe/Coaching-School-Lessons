@@ -2,11 +2,18 @@ In README i will provide informations on how to install and run the project.
 
 I will use a makefile to create a local db and restore the .bak file of my database
 
+
+
 First create a database and a RESTful API using Entity Framework (I can also create an sql script with the commands to insert the data) - (GET, POST, PUT, ROLES FOR DELETE [SUDO USER, VISITOR], Authantication through JWT tokens, DTOs, Interfaces, Repositories, use Assembly.cs files for versioning maybe)
 
 Then consume the API using a FE framework (Angular propably). Create a simple FE just to show the data for starters. 
 
-Tables: Lessons, Roles (Teacher, Student, SuperUSer), Users (Teachers, Students) IsTeacher 1 or 0, Classes (Day, time, lesson [foreign key]), UserLessons, UserRoles, UserClasses
+Tables: 
+	- Role (Id, Name [Teacher, Student, SuperUSer])
+	- User (Id, FirstName, LastName, Role[obj]) this table is going to be connected with the Roles table to indicate the role of the user
+	- Subject (Id, Name)
+	- Group (Id, Subject[obj], List<User>[obj], DayAndTime)
+	- UserSubject (UserId, SubjectId)
 
 THE MAIN FOCUS OF THE PROJECT IS TO SHOW THE BACKEND KNOWLEDGE
 
