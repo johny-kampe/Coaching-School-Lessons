@@ -1,5 +1,6 @@
-using CoachingSchoolLeassons.API.Data;
-using CoachingSchoolLeassons.API.Models.Domain;
+using AutoMapper;
+using CoachingSchoolLeassons.API.Interfaces;
+using CoachingSchoolLeassons.API.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoachingSchoolLeassons.API.Controllers
@@ -8,21 +9,33 @@ namespace CoachingSchoolLeassons.API.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly CoachingSchoolDbContext dbContext;
+        private readonly IUserRepository userRepository;
+        private readonly IMapper mapper;
 
-        public UserController(CoachingSchoolDbContext dbContext)
+        public UserController(IUserRepository userRepository, IMapper mapper)
         {
-            this.dbContext = dbContext;
+            this.userRepository = userRepository;
+            this.mapper = mapper;
         }
 
-        [HttpGet(Name = "GetAllUsers")]
+        [HttpGet(Name = "GetUsers")]
         public async Task<IActionResult> GetAllUsers()
         {
-            //var regionsDomain = await regionRepository.GetAllAsync();
+            var usersDomain = await userRepository.GetAllUsersAsync();
 
-            //var regionsDto = mapper.Map<List<RegionDto>>(regionsDomain);
-
-            return Ok();
+            return Ok(usersDomain);
         }
+
+        //[HttpGet(Name = "GetUserRole")]
+        //public async Task<IActionResult> GetUserRole()
+        //{
+        //    var usersDomain = await userRepository.GetAllUsersAsync();
+
+        //    var user = await userRepository.GetUserByIdAsync(usersDomain[0].Id);
+
+        //    var userDto = mapper.Map<List<UserDto>>(usersDomain);
+
+        //    return Ok(userDto);
+        //}
     }
 }

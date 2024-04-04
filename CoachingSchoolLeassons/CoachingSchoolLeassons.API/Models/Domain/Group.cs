@@ -11,7 +11,7 @@ namespace CoachingSchoolLeassons.API.Models.Domain
         [ForeignKey("Subject")]
         public Guid SubjectId { get; set; }
 
-        public virtual List<User> Users { get; set; }
+        public virtual List<User>? Users { get; set; }
 
         public DateTime DayAndTime { get; set; }
     }

@@ -1,16 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CoachingSchoolLeassons.API.Models.Domain
+namespace CoachingSchoolLeassons.API.Models.DTO
 {
-    public class User
+    public class UserDto
     {
         [Key]
         public Guid Id { get; set; }
-        
+
         public string? FirstName { get; set; }
-        
+
         public string? LastName { get; set; }
 
         [ForeignKey("Role")]

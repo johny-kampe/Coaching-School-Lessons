@@ -1,4 +1,7 @@
 using CoachingSchoolLeassons.API.Data;
+using CoachingSchoolLeassons.API.Data.Repositories;
+using CoachingSchoolLeassons.API.Interfaces;
+using CoachingSchoolLeassons.API.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +15,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<CoachingSchoolDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("CoachingSchoolLessonsConnectionString")));
+
+builder.Services.AddScoped<IUserRepository, SqlUserRepository>();
+
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 var app = builder.Build();
 
