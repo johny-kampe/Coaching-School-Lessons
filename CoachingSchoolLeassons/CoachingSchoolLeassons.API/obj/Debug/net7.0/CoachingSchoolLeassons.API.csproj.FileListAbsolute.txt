@@ -5,6 +5,8 @@ C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeas
 C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\CoachingSchoolLeassons.API.runtimeconfig.json
 C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\CoachingSchoolLeassons.API.dll
 C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\CoachingSchoolLeassons.API.pdb
+C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\AutoMapper.dll
+C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\Azure.Core.dll
 C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\Azure.Identity.dll
 C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\Humanizer.dll
@@ -74,5 +76,3 @@ C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeas
 C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\obj\Debug\net7.0\CoachingSchoolLeassons.API.pdb
 C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\obj\Debug\net7.0\CoachingSchoolLeassons.API.genruntimeconfig.cache
 C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\obj\Debug\net7.0\ref\CoachingSchoolLeassons.API.dll
-C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\AutoMapper.dll
-C:\Work\GitHub\Coaching-School-Lessons\CoachingSchoolLeassons\CoachingSchoolLeassons.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

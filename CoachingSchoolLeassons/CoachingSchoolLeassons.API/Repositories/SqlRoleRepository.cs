@@ -1,9 +1,8 @@
 ﻿using CoachingSchoolLeassons.API.Data;
-using CoachingSchoolLeassons.API.Interfaces;
 using CoachingSchoolLeassons.API.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace CoachingSchoolLeassons.API.Data.Repositories
+namespace CoachingSchoolLeassons.API.Interfaces
 {
     public class SqlRoleRepository : IRoleRepository
     {

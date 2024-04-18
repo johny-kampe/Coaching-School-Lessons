@@ -1,48 +1,38 @@
-﻿using CoachingSchoolLeassons.API.Data.Repositories;
+﻿using CoachingSchoolLeassons.API.Interfaces;
 using CoachingSchoolLeassons.API.Models.Domain;
 
 namespace CoachingSchoolLeassons.API.Services
 {
     public class UsersServices
     {
-        private readonly SqlUserRepository userRepository;
-        private readonly SqlRoleRepository roleRepository;
+        private readonly SqlUserRepository sqlUserRepository;
 
-        public UsersServices(SqlUserRepository userRepository, SqlRoleRepository roleRepository) 
+        public UsersServices(SqlUserRepository sqlUserRepository)
         {
-            this.userRepository = userRepository;
-            this.roleRepository = roleRepository;
+            this.sqlUserRepository = sqlUserRepository;
+        }
+        public async Task<List<User>> GetEveryUser()
+        {
+            var allUsers = await sqlUserRepository.GetAllUsersAsync();
+
+            if (allUsers.Any())
+            {
+                return allUsers;
+            }
+
+            return new List<User>();
         }
 
-        public async Task<List<User>> GetUsers()
+        internal async Task<User?> SpecificUserById(Guid id)
         {
-            var usersList = await userRepository.GetAllUsersAsync();
+            var specificUser = await sqlUserRepository.GetUserByIdAsync(id);
 
-            if(usersList.Any())
+            if (specificUser != null)
             {
-                return null;
+                return specificUser;
             }
 
-            return usersList;
-        }
-
-        public Role GetUserRoleById(Guid id)
-        {
-            var user = userRepository.GetUserByIdAsync(id);
-
-            if (user.IsFaulted)
-            {
-                //throw new Exception There is not user!
-            }
-
-            var userRole = roleRepository.GetRoleByIdAsync(user.Result.RoleId);
-
-            if (userRole.IsFaulted)
-            {
-                return null;
-            }
-
-            return userRole.Result;
+            return null;
         }
     }
 }

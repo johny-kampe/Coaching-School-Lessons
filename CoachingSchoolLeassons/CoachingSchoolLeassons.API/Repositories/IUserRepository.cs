@@ -6,6 +6,5 @@ namespace CoachingSchoolLeassons.API.Interfaces
     {
         Task<List<User>> GetAllUsersAsync();
         Task<User?> GetUserByIdAsync(Guid id);
-        Task<Role?> GetUserRoleByIdAsync(Guid id);
     }
 }

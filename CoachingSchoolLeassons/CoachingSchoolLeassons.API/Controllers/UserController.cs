@@ -1,6 +1,6 @@
 using AutoMapper;
-using CoachingSchoolLeassons.API.Interfaces;
 using CoachingSchoolLeassons.API.Models.DTO;
+using CoachingSchoolLeassons.API.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoachingSchoolLeassons.API.Controllers
@@ -9,21 +9,31 @@ namespace CoachingSchoolLeassons.API.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepository userRepository;
         private readonly IMapper mapper;
+        private readonly UsersServices usersServices;
 
-        public UserController(IUserRepository userRepository, IMapper mapper)
+        public UserController(IMapper mapper, UsersServices usersServices)
         {
-            this.userRepository = userRepository;
             this.mapper = mapper;
+            this.usersServices = usersServices;
         }
 
-        [HttpGet(Name = "GetUsers")]
-        public async Task<IActionResult> GetAllUsers()
+        [Route("GetAllUsers")]
+        [HttpGet]
+        public async Task<IActionResult> EverySavedUser()
         {
-            var usersDomain = await userRepository.GetAllUsersAsync();
+            var allUsers = await usersServices.GetEveryUser();
 
-            return Ok(usersDomain);
+            return Ok(allUsers);
+        }
+
+        [Route("GetUserById")]
+        [HttpGet]
+        public async Task<IActionResult> GetSpecificUser(Guid id)
+        {
+            var specificUser = await usersServices.SpecificUserById(id);
+
+            return Ok(specificUser);
         }
 
         //[HttpGet(Name = "GetUserRole")]

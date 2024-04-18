@@ -1,5 +1,4 @@
 using CoachingSchoolLeassons.API.Data;
-using CoachingSchoolLeassons.API.Data.Repositories;
 using CoachingSchoolLeassons.API.Interfaces;
 using CoachingSchoolLeassons.API.Mappings;
 using Microsoft.EntityFrameworkCore;
